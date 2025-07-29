@@ -1,41 +1,52 @@
-# 🎬 OOP-Based Movie Library App
+WEB3BRIDGE Program.
+WEB2ACXIII — Assignment 2: OOP-Based Movie Library App
 
-A Python-based movie collection manager that allows users to manage their favorite movies, rate them, and write reviews — all using object-oriented programming principles.
+A Flask-powered and OOP-based Python movie manager that allows users to maintain a personal movie collection, fetch real-time movie details from the OMDb API, rate and review movies, and experience polymorphic display per genre — built as part of the Web3Bridge Python/Flask program (WEB2ACXIII).
 
-## 🚀 Features
+🚀 Features
+✅ Object-Oriented Programming (OOP) Design in Python
 
-- Object-Oriented Design (OOP) using Python
-- Base `Movie` class with inheritance: `ActionMovie`, `ComedyMovie`
-- Private user rating fields
-- Polymorphic display of movies by genre
-- User collection management
-- Review system for movies
-- Connects to the [OMDb API](https://www.omdbapi.com/) to auto-fetch movie data
+✅ Flask-based lightweight UI for interaction
 
----
+✅ Base Movie class with inheritance: ActionMovie, ComedyMovie
 
-## 🧱 Class Structure
+✅ Private fields for user ratings
 
-### `Movie`
-Base class for all movies. Stores title, year, genre, and a **private rating**.
+✅ Polymorphic genre-specific display methods
 
-### `ActionMovie`, `ComedyMovie`
-Inherited classes with customized display formats.
+✅ User class to manage personal movie collections
 
-### `User`
-Represents a user who can add movies to their personal collection.
+✅ Review system for adding comments and scores
 
-### `Review`
-Lets users leave comments and scores for movies.
+✅ Integration with OMDb API for real-time movie data
 
----
+🧱 Class Structure
+🎬 Movie
+Base class representing any movie.
 
-## 📦 Requirements
+Attributes: title, year, genre, description, private _rating
 
-- Python 3.x
-- `requests` library
+Method: display() (polymorphic)
 
-Install dependencies using:
+🎞️ ActionMovie / ComedyMovie
+Inherited from Movie
 
-```bash
-pip install requests
+Custom display() method per genre
+
+May include extra behavior for action/comedy-specific logic
+
+👤 User
+Manages the user’s name and personal movie collection
+
+Methods to add, remove, and list movies
+
+📝 Review
+Represents user feedback
+
+Contains username, comment, and score (1-10)
+
+🌐 API Integration
+Uses the OMDb API to auto-fetch movie metadata (title, year, genre, description).
+
+Get your OMDb API key from: https://www.omdbapi.com/apikey.aspx
+
