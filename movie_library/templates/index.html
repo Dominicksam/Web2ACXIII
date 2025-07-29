@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ user.name }}'s Movie Library</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>
+        {% if user %}
+            {{ user.name }}'s Movie Library
+        {% else %}
+            Movie Library
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>{{ user.name }}'s Movie Library</h1>
+        <h1>
+            {% if user %}
+                {{ user.name }}'s Movie Library
+            {% else %}
+                Movie Library
+            {% endif %}
+        </h1>
 
         <form action="/add" method="POST">
+            <input type="text" name="username" placeholder="Your Name" required>
             <input type="text" name="title" placeholder="Movie Title" required>
             <input type="text" name="genre" placeholder="Genre (optional)">
             <textarea name="review" placeholder="Your review"></textarea>
@@ -17,15 +30,17 @@
             <button type="submit">Add Movie</button>
         </form>
 
-        {% if user.movies %}
+        {% if movies %}
             <div class="movie-list">
-                {% for movie in user.movies %}
+                {% for movie in movies %}
                     <div class="movie-card">
                         <img src="{{ movie.poster }}" alt="{{ movie.title }}">
                         <div class="movie-info">
                             <h3>{{ movie.title }}</h3>
-                            <p>{{ movie.display_info() }}</p>
-                            <p><strong>Rating:</strong> {{ movie.get_user_rating() }}/10</p>
+                            <p><strong>Genre:</strong> {{ movie.genre if movie.genre else 'N/A' }}</p>
+                            <p><strong>Review:</strong> {{ movie.review }}</p>
+                            <p><strong>Rating:</strong> {{ movie.rating }}/10</p>
+                            <p><strong>Added by:</strong> {{ movie.username }}</p>
                         </div>
                     </div>
                 {% endfor %}

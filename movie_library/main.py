@@ -20,11 +20,7 @@ def main():
         movie2.set_rating(8)
         user.add_movie(movie2)
 
-    # Add review
-    review = Review(user, movie1, "Mind-bending and intense!", 9)
-    print(review.display_review())
-
-    # List collection
+    # Add review 
     user.list_collection()
 
 if __name__ == "__main__":
