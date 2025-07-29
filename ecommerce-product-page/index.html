@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sneakers | Product Page</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">sneakers</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cart-profile">
+      <button class="cart-btn" aria-label="Cart">
+        🛒 <span class="cart-count">0</span>
+      </button>
+      <img src="images/image-avatar.png" alt="User Avatar" class="avatar"/>
+    </div>
+  </header>
+
+  <main class="product-page">
+    <section class="gallery">
+      <img src="images/image-product-1.jpg" class="main-img" alt="Sneaker Image" />
+      <div class="thumbnails">
+        <img src="images/image-product-1-thumbnail.jpg" class="thumb active" />
+        <img src="images/image-product-2-thumbnail.jpg" class="thumb" />
+        <img src="images/image-product-3-thumbnail.jpg" class="thumb" />
+        <img src="images/image-product-4-thumbnail.jpg" class="thumb" />
+      </div>
+    </section>
+
+    <section class="product-details">
+      <h2 class="brand">Sneaker Company</h2>
+      <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+      <p class="description">
+        These low-profile sneakers are your perfect casual wear companion.
+      </p>
+
+      <div class="price-box">
+        <span class="price">$125.00</span>
+        <span class="discount">50%</span>
+        <span class="old-price">$250.00</span>
+      </div>
+
+      <div class="quantity-cart">
+        <div class="quantity-selector">
+          <button class="minus">-</button>
+          <span class="quantity">1</span>
+          <button class="plus">+</button>
+        </div>
+        <button class="add-to-cart">
+          🛒 Add to cart
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sneaker Company</p>
+    <button id="theme-toggle">🌙 Dark Mode</button>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+:root {
+  --primary: hsl(26, 100%, 55%);
+  --light-gray: hsl(223, 64%, 98%);
+  --dark-gray: hsl(219, 9%, 45%);
+  --white: #fff;
+  --black: #000;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* ...more styling like responsive adjustments and hover effects... */
+.product-image {
+  max-width: 100%;
+  border-radius: 8px;
+}
