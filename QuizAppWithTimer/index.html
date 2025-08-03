@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced JavaScript Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="background-animation">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+  </div>
+  
+  <div class="app-container">
+    <header class="quiz-header">
+      <h1><i class="fas fa-brain"></i> JavaScript Quiz Master</h1>
+      <div class="quiz-stats">
+        <div class="stat-item">
+          <i class="fas fa-question-circle"></i>
+          <span id="question-counter">1 / 5</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-clock"></i>
+          <span id="timer">30s</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-star"></i>
+          <span id="current-score">0</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="quiz-container" id="quiz">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+      
+      <div class="question-section">
+        <div class="difficulty-badge" id="difficulty">Medium</div>
+        <h2 id="question">Question text</h2>
+      </div>
+      
+      <div class="answers-section">
+        <div class="answer-option" data-answer="a">
+          <input type="radio" name="answer" id="a" />
+          <label for="a">
+            <span class="option-letter">A</span>
+            <span class="option-text" id="a_text"></span>
+            <i class="fas fa-check-circle correct-icon"></i>
+            <i class="fas fa-times-circle incorrect-icon"></i>
+          </label>
+        </div>
+        
+        <div class="answer-option" data-answer="b">
+          <input type="radio" name="answer" id="b" />
+          <label for="b">
+            <span class="option-letter">B</span>
+            <span class="option-text" id="b_text"></span>
+            <i class="fas fa-check-circle correct-icon"></i>
+            <i class="fas fa-times-circle incorrect-icon"></i>
+          </label>
+        </div>
+        
+        <div class="answer-option" data-answer="c">
+          <input type="radio" name="answer" id="c" />
+          <label for="c">
+            <span class="option-letter">C</span>
+            <span class="option-text" id="c_text"></span>
+            <i class="fas fa-check-circle correct-icon"></i>
+            <i class="fas fa-times-circle incorrect-icon"></i>
+          </label>
+        </div>
+        
+        <div class="answer-option" data-answer="d">
+          <input type="radio" name="answer" id="d" />
+          <label for="d">
+            <span class="option-letter">D</span>
+            <span class="option-text" id="d_text"></span>
+            <i class="fas fa-check-circle correct-icon"></i>
+            <i class="fas fa-times-circle incorrect-icon"></i>
+          </label>
+        </div>
+      </div>
+
+      <div class="quiz-actions">
+        <button id="submit" class="btn-primary">
+          <i class="fas fa-arrow-right"></i>
+          Next Question
+        </button>
+        <button id="skip" class="btn-secondary">
+          <i class="fas fa-forward"></i>
+          Skip
+        </button>
+      </div>
+    </div>
+
+    <div class="quiz-results" id="results" style="display: none;">
+      <div class="results-header">
+        <div class="trophy-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h2>Quiz Complete!</h2>
+      </div>
+      
+      <div class="score-display">
+        <div class="score-circle">
+          <span class="score-text" id="final-score">0/5</span>
+          <span class="score-percentage" id="score-percentage">0%</span>
+        </div>
+      </div>
+      
+      <div class="results-details">
+        <div class="result-item">
+          <i class="fas fa-check text-success"></i>
+          <span>Correct Answers: <strong id="correct-count">0</strong></span>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-times text-danger"></i>
+          <span>Incorrect Answers: <strong id="incorrect-count">0</strong></span>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-clock"></i>
+          <span>Time Taken: <strong id="time-taken">0s</strong></span>
+        </div>
+      </div>
+      
+      <div class="results-actions">
+        <button onclick="location.reload()" class="btn-primary">
+          <i class="fas fa-redo"></i>
+          Try Again
+        </button>
+        <button id="share-results" class="btn-secondary">
+          <i class="fas fa-share"></i>
+          Share Results
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
